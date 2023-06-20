@@ -51,28 +51,6 @@ public extension View {
 
         return self
     }
-
-    /// ViewModifier to set a given Font and a given Line Height to the View.
-    /// The Vertical Padding parameter is also considered as the .padding modifier is used to set the Line Height.
-    ///
-    /// - Parameters:
-    ///   - font: The font to be set.
-    ///   - lineHeight: The line height to be set.
-    ///   - verticalPadding: The vertical padding to be set.
-    /// - Returns: The modified view.
-    func fontWithLineHeightCUI(font: UIFont, lineHeight: CGFloat, verticalPadding: CGFloat) -> some View {
-        ModifiedContent(content: self,
-                        modifier: FontWithLineHeightCUI(font: font,
-                                                     lineHeight: lineHeight,
-                                                     verticalPadding: verticalPadding))
-    }
-}
-
-public extension View {
-    func cornerRadiusCUI(_ radius: CGFloat, corners: UIRectCorner) -> some View {
-        ModifiedContent(content: self,
-                        modifier: CornerRadiusStyleCUI(radius: radius, corners: corners))
-    }
 }
 
 public extension View {
@@ -87,46 +65,6 @@ public extension View {
       action()
     }
   }
-}
-
-public extension View {
-    func openWebViewSUI(webInfo: WebInfo) -> some View {
-        fullScreenCover(item: webInfo.info, onDismiss: {
-            webInfo.action?()
-        }) { details in
-            withAnimation {
-                WebViewSUI(urlString: details.url?.urlWithQueryStringCUI(with: details.queryParameters ?? [:]) ?? "")
-            }
-        }
-    }
-}
-
-public extension View {
-    func navigation<V: Identifiable, Destination: View>(item: Binding<V?>, destination: @escaping (V) -> Destination) -> some View {
-        background(NavigationLink(item: item, destination: destination))
-    }
-}
-
-public extension View {
-    func onRefreshCUI(refreshControlData: AmwayRefreshControlBuilderCUI.AmwayRefreshControlDataCUI = AmwayRefreshControlBuilderCUI().build(),
-                            onValueChanged: @escaping (UIRefreshControl) -> Void) -> some View
-    {
-        modifier(OnListRefreshModifierCUI(refreshControlData: refreshControlData,
-                                       onValueChanged: onValueChanged))
-    }
-
-    func onRefreshScrollViewCUI(refreshControlData: AmwayRefreshControlBuilderCUI.AmwayRefreshControlDataCUI = AmwayRefreshControlBuilderCUI().build(),
-                            onValueChanged: @escaping (UIRefreshControl) -> Void) -> some View
-    {
-        modifier(OnScrollViewRefreshModifierCUI(refreshControlData: refreshControlData,
-                                       onValueChanged: onValueChanged))
-    }
-}
-
-public extension View {
-    func disableScrolling(disabled: Bool) -> some View {
-        modifier(DisableScrolling(disabled: disabled))
-    }
 }
 
 public extension View {
