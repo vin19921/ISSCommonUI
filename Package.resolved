@@ -1,0 +1,14 @@
+{
+  "pins" : [
+    {
+      "identity" : "themekitios",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/vin19921/ThemeKitIOS",
+      "state" : {
+        "branch" : "develop",
+        "revision" : "dc237110d2b903af1275fe3ace22fbfa8ceeda38"
+      }
+    }
+  ],
+  "version" : 2
+}
