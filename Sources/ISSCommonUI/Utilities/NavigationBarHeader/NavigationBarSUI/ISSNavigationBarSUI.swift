@@ -241,7 +241,7 @@ private struct ToolBarButtonWithImage: View {
     var roundedbuttonSize: CGFloat
     var imageAlignment: Alignment?
     
-    fileprivate var body: some View {
+    fileprivate var body: some View {=
         Button {
             toolBarItem?.callback?()
         } label: {
@@ -253,7 +253,7 @@ private struct ToolBarButtonWithImage: View {
                 .ifCUI((toolBarItem?.foregroundColor ?? foregroundColor) != nil) { view in
                     view.colorMultiply(toolBarItem?.foregroundColor ?? foregroundColor ?? .clear)
                 }
-                .foregroundColor(toolBarItem?.foregroundColor ?? foregroundColor != nil)
+                .foregroundColor(toolBarItem?.foregroundColor ?? foregroundColor)
                 .aspectRatio(contentMode: .fit)
                 
             
