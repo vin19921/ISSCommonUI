@@ -131,6 +131,7 @@ public struct ISSNavigationBarSUI: View {
                         if let leftAlignedItem = toolBarItems?.leftAlignedItem {
                             ToolBarItemView(toolBarItem: leftAlignedItem,
                                             tintColor: tintColor,
+                                            foregroundColor: foregroundColor,
                                             height: height,
                                             imageBackgroundColor: imageBackgroundColor,
                                             roundedbuttonSize: roundedbuttonSize,
@@ -140,6 +141,7 @@ public struct ISSNavigationBarSUI: View {
                         if let leftAlignedSecondItem = toolBarItems?.leftAlignedSecondItem {
                             ToolBarItemView(toolBarItem: leftAlignedSecondItem,
                                             tintColor: tintColor,
+                                            foregroundColor: foregroundColor,
                                             height: height,
                                             imageBackgroundColor: imageBackgroundColor,
                                             roundedbuttonSize: roundedbuttonSize)
@@ -151,6 +153,7 @@ public struct ISSNavigationBarSUI: View {
                         if let centerAlignedItem = toolBarItems?.centerAlignedItem {
                             ToolBarItemView(toolBarItem: centerAlignedItem,
                                             tintColor: tintColor,
+                                            foregroundColor: foregroundColor,
                                             height: height,
                                             imageBackgroundColor: imageBackgroundColor,
                                             roundedbuttonSize: roundedbuttonSize)
@@ -160,6 +163,7 @@ public struct ISSNavigationBarSUI: View {
                 
                 ToolBarRightAlignedItems(toolBarItems: toolBarItems,
                                          tintColor: tintColor,
+                                         foregroundColor: foregroundColor,
                                          height: height,
                                          imageBackgroundColor: imageBackgroundColor,
                                          roundedbuttonSize: roundedbuttonSize)
@@ -202,6 +206,7 @@ private struct ToolBarItemView: View {
             if (toolBarItem?.image == nil) {
                 ToolBarWithText(toolBarItem: toolBarItem,
                                 tintColor: tintColor,
+                                foregroundColor: foregroundColor,
                                 roundedbuttonSize: roundedbuttonSize)
                 .fixedSize(horizontal: true, vertical: true)
             } else {
@@ -248,9 +253,9 @@ private struct ToolBarButtonWithImage: View {
         } label: {
             toolBarItem?.image?
                 .renderingMode(.template)
-                .ifCUI((toolBarItem?.tintColor ?? tintColor) != nil) { view in
-                    view.colorMultiply(toolBarItem?.tintColor ?? tintColor ?? .clear)
-                }
+//                .ifCUI((toolBarItem?.tintColor ?? tintColor) != nil) { view in
+//                    view.colorMultiply(toolBarItem?.tintColor ?? tintColor ?? .clear)
+//                }
 //                .ifCUI((toolBarItem?.foregroundColor ?? foregroundColor) != nil) { view in
 //                    view.foregroundColor(toolBarItem?.foregroundColor ?? foregroundColor ?? Theme.current.issWhite.color)
 //                }

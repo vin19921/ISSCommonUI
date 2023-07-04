@@ -85,7 +85,7 @@ public class ISSNavigationBarBuilder {
         return self
     }
 
-    /// tintColor changes the color of Image, title added to navBar. Default value is White for now.
+    /// foregroundColor changes the color of Image, title added to navBar. Default value is White for now.
     public func setForegroundColor(_ foregroundColor: Color) -> ISSNavigationBarBuilder {
         self.foregroundColor = foregroundColor
         return self
