@@ -253,9 +253,10 @@ private struct ToolBarButtonWithImage: View {
         } label: {
             toolBarItem?.image?
                 .renderingMode(.template)
-//                .ifCUI((toolBarItem?.tintColor ?? tintColor) != nil) { view in
-//                    view.colorMultiply(toolBarItem?.tintColor ?? tintColor ?? .clear)
-//                }
+                .ifCUI((toolBarItem?.tintColor ?? tintColor) != nil) { view in
+                    view.colorMultiply(toolBarItem?.tintColor ?? tintColor ?? .clear)
+                    view.foregroundColor(toolBarItem?.tintColor ?? tintColor ?? .clear)
+                }
 //                .ifCUI((toolBarItem?.foregroundColor ?? foregroundColor) != nil) { view in
 //                    view.foregroundColor(toolBarItem?.foregroundColor ?? foregroundColor ?? Theme.current.issWhite.color)
 //                }
@@ -287,6 +288,7 @@ private struct ToolBarButtonWithImage: View {
 private struct ToolBarRightAlignedItems: View {
     var toolBarItems: ToolBarItemsDataBuilder.ToolBarItemsData?
     var tintColor: Color?
+    var foregroundColor: Color?
     var height: CGFloat?
     var imageBackgroundColor: Color?
     var roundedbuttonSize: CGFloat
@@ -297,6 +299,7 @@ private struct ToolBarRightAlignedItems: View {
                 if let rightAlignedThirdItem = toolBarItems?.rightAlignedThirdItem {
                     ToolBarItemView(toolBarItem: rightAlignedThirdItem,
                                     tintColor: tintColor,
+                                    foregroundColor: foregroundColor,
                                     height: height,
                                     imageBackgroundColor: imageBackgroundColor,
                                     roundedbuttonSize: roundedbuttonSize,
@@ -305,6 +308,7 @@ private struct ToolBarRightAlignedItems: View {
                 if let rightAlignedSecondItem = toolBarItems?.rightAlignedSecondItem {
                     ToolBarItemView(toolBarItem: rightAlignedSecondItem,
                                     tintColor: tintColor,
+                                    foregroundColor: foregroundColor,
                                     height: height,
                                     imageBackgroundColor: imageBackgroundColor,
                                     roundedbuttonSize: roundedbuttonSize,
@@ -313,6 +317,7 @@ private struct ToolBarRightAlignedItems: View {
                 if let rightAlignedItem = toolBarItems?.rightAlignedItem {
                     ToolBarItemView(toolBarItem: rightAlignedItem,
                                     tintColor: tintColor,
+                                    foregroundColor: foregroundColor,
                                     height: height,
                                     imageBackgroundColor: imageBackgroundColor,
                                     roundedbuttonSize: roundedbuttonSize,
