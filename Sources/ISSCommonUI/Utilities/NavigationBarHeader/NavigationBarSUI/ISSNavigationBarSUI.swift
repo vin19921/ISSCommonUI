@@ -254,7 +254,7 @@ private struct ToolBarButtonWithImage: View {
 //                    view.foregroundColor(toolBarItem?.foregroundColor ?? foregroundColor ?? Theme.current.issWhite.color)
 //                }
 //                .foregroundColor(toolBarItem?.foregroundColor)
-                .foregroundStyle(toolBarItem?.foregroundColor)
+                .foregroundStyle(toolBarItem?.foregroundColor ?? .clear)
                 .aspectRatio(contentMode: .fit)
                 
             
