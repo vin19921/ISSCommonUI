@@ -86,3 +86,20 @@ public extension View {
         return image
     }
 }
+
+public extension View {
+    /// ViewModifier to set a given Font and a given Line Height to the View.
+    /// The Vertical Padding parameter is also considered as the .padding modifier is used to set the Line Height.
+    ///
+    /// - Parameters:
+    ///   - font: The font to be set.
+    ///   - lineHeight: The line height to be set.
+    ///   - verticalPadding: The vertical padding to be set.
+    /// - Returns: The modified view.
+    func fontWithLineHeight(font: UIFont, lineHeight: CGFloat, verticalPadding: CGFloat) -> some View {
+        ModifiedContent(content: self,
+                        modifier: FontWithLineHeightCUI(font: font,
+                                                        lineHeight: lineHeight,
+                                                        verticalPadding: verticalPadding))
+    }
+}
