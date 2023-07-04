@@ -246,6 +246,7 @@ private struct ToolBarButtonWithImage: View {
             toolBarItem?.callback?()
         } label: {
             toolBarItem?.image?
+                .renderingMode(.template)
                 .ifCUI((toolBarItem?.tintColor ?? tintColor) != nil) { view in
                     view.colorMultiply(toolBarItem?.tintColor ?? tintColor ?? .clear)
                 }
