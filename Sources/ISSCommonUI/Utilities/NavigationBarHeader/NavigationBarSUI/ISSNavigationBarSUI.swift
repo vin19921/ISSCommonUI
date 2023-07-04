@@ -241,7 +241,7 @@ private struct ToolBarButtonWithImage: View {
     var roundedbuttonSize: CGFloat
     var imageAlignment: Alignment?
     
-    fileprivate var body: some View {=
+    fileprivate var body: some View {
         Button {
             toolBarItem?.callback?()
         } label: {
