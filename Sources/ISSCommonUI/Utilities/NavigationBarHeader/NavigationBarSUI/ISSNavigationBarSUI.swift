@@ -227,6 +227,7 @@ private struct ToolBarItemView: View {
 private struct ToolBarWithText: View {
     var toolBarItem: ToolBarItemDataBuilder.ToolBarItemData?
     var tintColor: Color?
+    var foregroundColor: Color?
     var roundedbuttonSize: CGFloat
     
     fileprivate var body: some View {
@@ -255,7 +256,8 @@ private struct ToolBarButtonWithImage: View {
                 .renderingMode(.template)
                 .ifCUI((toolBarItem?.tintColor ?? tintColor) != nil) { view in
                     view.colorMultiply(toolBarItem?.tintColor ?? tintColor ?? .clear)
-                    view.foregroundColor(toolBarItem?.tintColor ?? tintColor ?? .clear)
+//                    view.foregroundColor(toolBarItem?.tintColor ?? tintColor ?? .clear)
+//                    view.applyTintCUI(tintColor: toolBarItem?.tintColor ?? tintColor ?? .clear)
                 }
 //                .ifCUI((toolBarItem?.foregroundColor ?? foregroundColor) != nil) { view in
 //                    view.foregroundColor(toolBarItem?.foregroundColor ?? foregroundColor ?? Theme.current.issWhite.color)
