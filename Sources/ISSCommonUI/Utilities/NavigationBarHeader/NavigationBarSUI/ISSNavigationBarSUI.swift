@@ -254,7 +254,7 @@ private struct ToolBarButtonWithImage: View {
 //                    view.foregroundColor(toolBarItem?.foregroundColor ?? foregroundColor ?? Theme.current.issWhite.color)
 //                }
 //                .foregroundColor(toolBarItem?.foregroundColor)
-                .foregroundStyle(toolBarItem?.foregroundColor ?? .clear ?? .clear)
+//                .foregroundStyle(toolBarItem?.foregroundColor ?? .clear ?? .clear)
                 .aspectRatio(contentMode: .fit)
                 
             
@@ -269,6 +269,10 @@ private struct ToolBarButtonWithImage: View {
                        height: roundedbuttonSize)
             .background(imageBackgroundColor ?? .clear)
                 .clipShape(Circle())
+        }
+        .ifCUI(foregroundColor != nil) { view in
+//            view.colorMultiply(toolBarItem?.tintColor ?? tintColor ?? .clear)
+            view.foregroundColor(foregroundColor)
         }
     }
 }
