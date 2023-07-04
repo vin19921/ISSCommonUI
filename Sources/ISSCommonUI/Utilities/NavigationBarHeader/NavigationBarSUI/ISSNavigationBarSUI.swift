@@ -215,6 +215,7 @@ private struct ToolBarItemView: View {
         }.accessibilityIdentifier(toolBarItem?.accessibilityIdentifier ?? "")
             .frame(height: height ?? 44)
             .allowsHitTesting(toolBarItem?.image != nil)
+            .foregroundColor(foregroundColor)
     }
 }
 
@@ -274,7 +275,7 @@ private struct ToolBarButtonWithImage: View {
 ////            view.colorMultiply(toolBarItem?.tintColor ?? tintColor ?? .clear)
 //            view.foregroundColor(foregroundColor)
 //        }
-        .accentColor(foregroundColor)
+//        .accentColor(foregroundColor)
     }
 }
 
