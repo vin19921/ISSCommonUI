@@ -95,7 +95,7 @@ public class ToolBarItemDataBuilder {
     
     private(set) var callback: (() -> Void)? = nil
     private(set) var image: Image? = nil
-    private(set) var tintColor: Color?foregroundColor
+    private(set) var tintColor: Color?
     private(set) var foregroundColor: Color?
     
     public init() {}
