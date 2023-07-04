@@ -36,6 +36,7 @@ public class ISSNavigationBarBuilder {
         let height: CGFloat
         let backgroundColor: Color?
         let tintColor: Color?
+        let foregroundColor: Color?
         let imageBackgroundColor: Color?
         let navigationBarHeightOffset: CGFloat?
         let isNavigationBarHeightOffsetBasedOnStatusBar: Bool
@@ -49,6 +50,7 @@ public class ISSNavigationBarBuilder {
     
     private(set) var backgroundColor: Color?
     private(set) var tintColor: Color?
+    private(set) var foregroundColor: Color?
     private(set) var imageBackgroundColor: Color? = nil
     private(set) var navigationBarHeightOffset: CGFloat? = nil
     private(set) var isNavigationBarHeightOffsetBasedOnStatusBar: Bool = false
@@ -80,6 +82,12 @@ public class ISSNavigationBarBuilder {
     /// tintColor changes the color of Image, title added to navBar. Default value is White for now.
     public func setTintColor(_ tintColor: Color) -> ISSNavigationBarBuilder {
         self.tintColor = tintColor
+        return self
+    }
+
+    /// tintColor changes the color of Image, title added to navBar. Default value is White for now.
+    public func setForegoundColor(_ foregroundColor: Color) -> ISSNavigationBarBuilder {
+        self.foregroundColor = foregroundColor
         return self
     }
 
@@ -121,6 +129,7 @@ public class ISSNavigationBarBuilder {
                                height: height,
                                backgroundColor: backgroundColor,
                                tintColor: tintColor,
+                               foregroundColor: foregroundColor,
                                imageBackgroundColor: imageBackgroundColor,
                                navigationBarHeightOffset: navigationBarHeightOffset,
                                isNavigationBarHeightOffsetBasedOnStatusBar: isNavigationBarHeightOffsetBasedOnStatusBar,

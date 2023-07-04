@@ -81,6 +81,7 @@ public class ToolBarItemDataBuilder {
         let image: Image?
         let titleString: String
         let tintColor: Color?
+        let foregroundColor: Color?
         let titleFont: Font
         let callback: (() -> Void)?
         let accessibilityIdentifier: String
@@ -94,7 +95,8 @@ public class ToolBarItemDataBuilder {
     
     private(set) var callback: (() -> Void)? = nil
     private(set) var image: Image? = nil
-    private(set) var tintColor: Color?
+    private(set) var tintColor: Color?foregroundColor
+    private(set) var foregroundColor: Color?
     
     public init() {}
     
@@ -115,6 +117,12 @@ public class ToolBarItemDataBuilder {
     /// tintColor changes the color of Image, title added to navBar. Default value is White for now.
     public func setTintColor(_ tintColor: Color) -> ToolBarItemDataBuilder {
         self.tintColor = tintColor
+        return self
+    }
+
+    /// foregroundColor changes the color of Image, title added to navBar. Default value is White for now.
+    public func setForegroundColor(_ foregrounndColor: Color) -> ToolBarItemDataBuilder {
+        self.foregroundColor = foregroundColor
         return self
     }
     

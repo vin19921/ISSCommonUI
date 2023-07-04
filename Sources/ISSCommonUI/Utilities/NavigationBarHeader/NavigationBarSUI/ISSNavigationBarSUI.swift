@@ -72,6 +72,7 @@ public struct ISSNavigationBarSUI: View {
     private var height: CGFloat?
     private var backgroundColor: Color?
     private var tintColor: Color?
+    private var foregroundColor: Color?
     private var imageBackgroundColor: Color?
     private var navigationBarHeightOffset: CGFloat?
     private var isNavigationBarHeightOffsetBasedOnStatusBar: Bool = false
@@ -111,6 +112,7 @@ public struct ISSNavigationBarSUI: View {
         self.height = data.height
         self.backgroundColor = data.backgroundColor
         self.tintColor = data.tintColor
+        self.foregroundColor = data.foregroundColor
         self.imageBackgroundColor = data.imageBackgroundColor
         self.navigationBarHeightOffset = data.navigationBarHeightOffset
         self.isNavigationBarHeightOffsetBasedOnStatusBar = data.isNavigationBarHeightOffsetBasedOnStatusBar
@@ -179,6 +181,7 @@ public struct ISSNavigationBarSUI: View {
 private struct ToolBarItemView: View {
     var toolBarItem: ToolBarItemDataBuilder.ToolBarItemData?
     var tintColor: Color?
+    var foregroundColor: Color?
     var height: CGFloat?
     var imageBackgroundColor: Color?
     var roundedbuttonSize: CGFloat
@@ -204,6 +207,7 @@ private struct ToolBarItemView: View {
             } else {
                 ToolBarButtonWithImage(toolBarItem: toolBarItem,
                                        tintColor: tintColor,
+                                       foregroundColor: foregroundColor,
                                        imageBackgroundColor: imageBackgroundColor,
                                        roundedbuttonSize: roundedbuttonSize,
                                        imageAlignment: imageAlignment)
@@ -232,6 +236,7 @@ private struct ToolBarWithText: View {
 private struct ToolBarButtonWithImage: View {
     var toolBarItem: ToolBarItemDataBuilder.ToolBarItemData?
     var tintColor: Color?
+    var foregroundColor: Color?
     var imageBackgroundColor: Color?
     var roundedbuttonSize: CGFloat
     var imageAlignment: Alignment?
@@ -243,6 +248,9 @@ private struct ToolBarButtonWithImage: View {
             toolBarItem?.image?
                 .ifCUI((toolBarItem?.tintColor ?? tintColor) != nil) { view in
                     view.colorMultiply(toolBarItem?.tintColor ?? tintColor ?? .clear)
+                }
+                .ifCUI((toolBarItem?.foregroundColor ?? foregroundColor) != nil) { view in
+                    view.colorMultiply(toolBarItem?.foregroundColor ?? foregroundColor ?? .clear)
                 }
                 .aspectRatio(contentMode: .fit)
                 
