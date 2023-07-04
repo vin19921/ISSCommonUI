@@ -121,7 +121,7 @@ public class ToolBarItemDataBuilder {
     }
 
     /// foregroundColor changes the color of Image, title added to navBar. Default value is White for now.
-    public func setForegroundColor(_ foregrounndColor: Color) -> ToolBarItemDataBuilder {
+    public func setForegroundColor(_ foregroundColor: Color) -> ToolBarItemDataBuilder {
         self.foregroundColor = foregroundColor
         return self
     }
@@ -147,6 +147,7 @@ public class ToolBarItemDataBuilder {
         ToolBarItemData(image: image,
                         titleString: titleString,
                         tintColor: tintColor,
+                        foregroundColor: foregroundColor,
                         titleFont: titleFont,
                         callback: callback,
                         accessibilityIdentifier: accessibilityIdentifier)
