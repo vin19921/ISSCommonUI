@@ -250,10 +250,10 @@ private struct ToolBarButtonWithImage: View {
                 .ifCUI((toolBarItem?.tintColor ?? tintColor) != nil) { view in
                     view.colorMultiply(toolBarItem?.tintColor ?? tintColor ?? .clear)
                 }
-                .ifCUI((toolBarItem?.foregroundColor ?? foregroundColor) != nil) { view in
-                    view.foregroundColor(toolBarItem?.foregroundColor ?? foregroundColor ?? Theme.current.issWhite.color)
-                }
-//                .foregroundColor(toolBarItem?.foregroundColor ? foregroundColor : Theme.current.issWhite.color)
+//                .ifCUI((toolBarItem?.foregroundColor ?? foregroundColor) != nil) { view in
+//                    view.foregroundColor(toolBarItem?.foregroundColor ?? foregroundColor ?? Theme.current.issWhite.color)
+//                }
+                .foregroundColor(toolBarItem?.foregroundColor)
                 .aspectRatio(contentMode: .fit)
                 
             
