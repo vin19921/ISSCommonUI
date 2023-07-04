@@ -253,6 +253,7 @@ private struct ToolBarButtonWithImage: View {
                 .ifCUI((toolBarItem?.foregroundColor ?? foregroundColor) != nil) { view in
                     view.colorMultiply(toolBarItem?.foregroundColor ?? foregroundColor ?? .clear)
                 }
+                .foregroundColor(toolBarItem?.foregroundColor ?? foregroundColor != nil)
                 .aspectRatio(contentMode: .fit)
                 
             
