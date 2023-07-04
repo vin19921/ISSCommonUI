@@ -220,7 +220,7 @@ private struct ToolBarItemView: View {
         }.accessibilityIdentifier(toolBarItem?.accessibilityIdentifier ?? "")
             .frame(height: height ?? 44)
             .allowsHitTesting(toolBarItem?.image != nil)
-            .foregroundColor(foregroundColor)
+//            .foregroundColor(foregroundColor)
     }
 }
 
@@ -253,13 +253,10 @@ private struct ToolBarButtonWithImage: View {
             toolBarItem?.callback?()
         } label: {
             toolBarItem?.image?
-//                .renderingMode(.template)
                 .ifCUI((toolBarItem?.tintColor ?? tintColor) != nil) { view in
                     view.colorMultiply(toolBarItem?.tintColor ?? tintColor ?? .clear)
                 }
                 .aspectRatio(contentMode: .fit)
-                
-            
         }
         .ifCUI(imageBackgroundColor == nil) { view in
             view.frame(width: roundedbuttonSize,
@@ -271,6 +268,9 @@ private struct ToolBarButtonWithImage: View {
                        height: roundedbuttonSize)
             .background(imageBackgroundColor ?? .clear)
                 .clipShape(Circle())
+        }
+        .ifCUI(foregroundColor != nil) { view in
+            view.foregroundColor(foregroundColor)
         }
     }
 }
