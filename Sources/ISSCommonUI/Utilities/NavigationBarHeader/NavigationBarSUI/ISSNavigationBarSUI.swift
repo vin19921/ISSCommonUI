@@ -270,10 +270,11 @@ private struct ToolBarButtonWithImage: View {
             .background(imageBackgroundColor ?? .clear)
                 .clipShape(Circle())
         }
-        .ifCUI(foregroundColor != nil) { view in
-//            view.colorMultiply(toolBarItem?.tintColor ?? tintColor ?? .clear)
-            view.foregroundColor(foregroundColor)
-        }
+//        .ifCUI(foregroundColor != nil) { view in
+////            view.colorMultiply(toolBarItem?.tintColor ?? tintColor ?? .clear)
+//            view.foregroundColor(foregroundColor)
+//        }
+        .accentColor(foregroundColor)
     }
 }
 
