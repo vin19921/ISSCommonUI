@@ -122,4 +122,24 @@ public extension View {
             }
         }
     }
+
+    func addToolBarTextField(placement: ToolbarItemPlacement = .navigationBarTrailing,
+                             accessibilityIdentifier: String? = nil,
+                             onSubmit: (() -> Void)? = nil) -> some View {
+        toolbar {
+            ToolbarItem(placement: placement) {
+                Color.clear
+                    .frame(width: 0, height: 0)
+                    .overlay(
+                        Rectangle()
+                            .fill(Color.clear)
+                            .contentShape(Rectangle())
+                            .onSubmit {
+                                onSubmit?()
+                            }
+                    )
+                    .accessibilityIdentifier(accessibilityIdentifier ?? "")
+            }
+        }
+    }
 }
