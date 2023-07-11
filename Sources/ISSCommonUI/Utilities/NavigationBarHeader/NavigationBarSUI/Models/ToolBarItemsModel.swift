@@ -85,6 +85,10 @@ public class ToolBarItemDataBuilder {
         let titleFont: Font
         let callback: (() -> Void)?
         let accessibilityIdentifier: String
+
+        let textField: TextField?
+        let textFieldPlaceholder: String
+        let textFieldString: Binding<String>
     }
     
     // MARK: - Private properties
@@ -97,6 +101,10 @@ public class ToolBarItemDataBuilder {
     private(set) var image: Image? = nil
     private(set) var tintColor: Color?
     private(set) var foregroundColor: Color?
+
+    // MARK: - TextField
+    private(set) var textField: TextField? = nil
+    private(set) var textFieldPlaceHolder: String = ""
     
     public init() {}
     
@@ -140,6 +148,12 @@ public class ToolBarItemDataBuilder {
     
     public func setAccessibilityIdentifier(_ accessibilityIdentifier: String) -> ToolBarItemDataBuilder {
         self.accessibilityIdentifier = accessibilityIdentifier
+        return self
+    }
+
+    /// add  a title in navigationBar eg. profile, home
+    public func setTextFieldPlaceholder(_ textFieldPlaceHolder: String) -> ToolBarItemDataBuilder {
+        self.textFieldPlaceHolder = textFieldPlaceHolder
         return self
     }
     
