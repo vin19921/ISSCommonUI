@@ -125,11 +125,13 @@ public extension View {
 
     func addToolBarTextField(placement: ToolbarItemPlacement = .navigationBarTrailing,
                              accessibilityIdentifier: String? = nil,
-                             text: Binding<String>) -> some View {
+                             text: Binding<String>?) -> some View {
         toolbar {
             ToolbarItem(placement: placement) {
-                TextField("Enter Text", text: text)
-                    .accessibilityIdentifier(accessibilityIdentifier ?? "")
+                if let text = text {
+                    TextField("Enter Text", text: text)
+                        .accessibilityIdentifier(accessibilityIdentifier ?? "")
+                }
             }
         }
     }
