@@ -102,4 +102,24 @@ public extension View {
                                                         lineHeight: lineHeight,
                                                         verticalPadding: verticalPadding))
     }
+
+    func navigationBarColor(backgroundColor: UIColor, textColor: UIColor) -> some View {
+        modifier(NavigationBarColorModifier(backgroundColor: backgroundColor, textColor: textColor))
+    }
+
+    func addToolBarButton(placement: ToolbarItemPlacement = .navigationBarTrailing,
+                          buttonAction: (() -> Void)? = nil,
+                          image: UIImage? = nil,
+                          accessibilityIdentifier: String? = nil) -> some View
+    {
+        toolbar {
+            ToolbarItem(placement: placement) {
+                Button {
+                    buttonAction?()
+                } label: {
+                    Image(uiImage: image ?? UIImage())
+                }.accessibilityIdentifier(accessibilityIdentifier ?? "")
+            }
+        }
+    }
 }
