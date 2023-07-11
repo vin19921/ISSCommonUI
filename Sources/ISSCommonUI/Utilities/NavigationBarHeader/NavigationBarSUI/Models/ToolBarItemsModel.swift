@@ -159,7 +159,7 @@ public class ToolBarItemDataBuilder {
     }
 
     /// add  a title in navigationBar eg. profile, home
-    public func setTextFieldString(_ textFieldString: String) -> ToolBarItemDataBuilder {
+    public func setTextFieldString(_ textFieldString: Binding<String>) -> ToolBarItemDataBuilder {
         self.textFieldString = textFieldString
         return self
     }
