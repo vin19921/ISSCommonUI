@@ -210,10 +210,10 @@ private struct ToolBarItemView: View {
                                 roundedbuttonSize: roundedbuttonSize)
                 .fixedSize(horizontal: true, vertical: true)
             }
-            else if (toolBarItem?.textFieldPlaceholder == nil) {
+            else if (toolBarItem?.textFieldPlaceHolder == nil) {
                 ToolBarWithTextField(roundedbuttonSize: roundedbuttonSize,
-                                     textFieldPlaceholder: toolBarItem?.textFieldPlaceholder,
-                                     text: toolBarItem?.textFieldString)
+                                     textFieldPlaceholder: toolBarItem?.textFieldPlaceHolder,
+                                     text: toolBarItem?.textFieldString ?? "")
                 .fixedSize(horizontal: false, vertical: true)
             }
             else {
