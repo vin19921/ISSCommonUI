@@ -256,8 +256,16 @@ private struct ToolBarWithText: View {
 //            .frame(height: roundedbuttonSize)
 //            .accessibilityValue(toolBarItem?.titleString ?? "")
         HStack {
-            TextField(toolBarItem?.textFieldPlaceHolder ?? "Enter Text",
-                      text: $toolBarItem?.textFieldString)
+//            TextField(toolBarItem?.textFieldPlaceHolder ?? "Enter Text",
+//                      text: toolBarItem?.$textFieldString)
+            TextField(toolBarItem?.textFieldPlaceHolder ?? "Enter Text", text: Binding(
+                get: {
+                    toolBarItem?.textFieldString ?? ""
+                },
+                set: { newValue in
+                    toolBarItem?.textFieldString = newValue
+                }
+            ))
             .font(toolBarItem?.titleFont ?? Theme.current.subtitle2.font)
             .frame(width: 150, height: roundedbuttonSize)
             .textFieldStyle(RoundedBorderTextFieldStyle())
@@ -327,8 +335,16 @@ private struct ToolBarWithTextField: View {
 //    @Binding var inputText: String?
 
     fileprivate var body: some View {
-        TextField(toolBarItem?.textFieldPlaceHolder ?? "Enter Text",
-                  text: $toolBarItem?.textFieldString)
+//        TextField(toolBarItem?.textFieldPlaceHolder ?? "Enter Text",
+//                  text: $toolBarItem?.textFieldString)
+        TextField(toolBarItem?.textFieldPlaceHolder ?? "Enter Text", text: Binding(
+            get: {
+                toolBarItem?.textFieldString ?? ""
+            },
+            set: { newValue in
+                toolBarItem?.textFieldString = newValue
+            }
+        ))
             .font(toolBarItem?.titleFont ?? Theme.current.subtitle2.font)
             .lineLimit(1)
             .frame(height: 36)
