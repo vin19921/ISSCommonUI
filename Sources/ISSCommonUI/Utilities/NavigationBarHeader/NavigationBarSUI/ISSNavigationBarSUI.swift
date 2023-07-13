@@ -336,19 +336,22 @@ private struct ToolBarWithTextField: View {
 //    @Binding var inputText: String?
 
     fileprivate var body: some View {
+        HStack {
+            
+        }
 //        TextField(toolBarItem?.textFieldPlaceHolder ?? "Enter Text",
 //                  text: $toolBarItem?.textFieldString)
-        TextField(toolBarItem?.textFieldPlaceHolder ?? "Enter Text", text: Binding(
-            get: {
-                toolBarItem?.textFieldString ?? ""
-            },
-            set: { newValue in
-                toolBarItem?.textFieldString = newValue
-            }
-        ))
-            .font(toolBarItem?.titleFont ?? Theme.current.subtitle2.font)
-            .lineLimit(1)
-            .frame(height: 36)
+//        TextField(toolBarItem?.textFieldPlaceHolder ?? "Enter Text", text: Binding(
+//            get: {
+//                toolBarItem?.textFieldString ?? ""
+//            },
+//            set: { newValue in
+//                toolBarItem?.textFieldString = newValue
+//            }
+//        ))
+//            .font(toolBarItem?.titleFont ?? Theme.current.subtitle2.font)
+//            .lineLimit(1)
+//            .frame(height: 36)
 //            .foregroundColor(Color.white)
 //            .background(Color.black)
     }
