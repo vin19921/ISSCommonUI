@@ -112,7 +112,7 @@ public class ToolBarItemDataBuilder {
 //    private(set) var textFieldString: Binding<String>? = nil
 //    private(set) var textField: ToolBarWithTextField<Text>? = nil
 //    private(set) var isTextField: Bool? = false
-    @Binding private(set) var textFieldString: String
+    @Binding private(set) var textFieldString: String?
     
 //    public init() {}
     private var defaultTextFieldString = "Default Value"
