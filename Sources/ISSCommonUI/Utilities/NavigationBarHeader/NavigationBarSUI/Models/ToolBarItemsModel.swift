@@ -87,7 +87,7 @@ public class ToolBarItemDataBuilder {
         let accessibilityIdentifier: String
 
         let textField: TextField<Text>?
-        let textFieldPlaceHolder: String?
+//        let textFieldPlaceHolder: String?
 //        let textFieldString: Binding<String>?
 //        @Binding var textFieldString: String?
 //        let isTextField: Bool?
@@ -108,7 +108,7 @@ public class ToolBarItemDataBuilder {
 
     // MARK: - TextField
     private(set) var textField: TextField<Text>? = nil
-    private(set) var textFieldPlaceHolder: String? = ""
+//    private(set) var textFieldPlaceHolder: String? = ""
 //    private(set) var textFieldString: Binding<String>? = nil
 //    private(set) var textField: ToolBarWithTextField<Text>? = nil
 //    private(set) var isTextField: Bool? = false
@@ -166,16 +166,16 @@ public class ToolBarItemDataBuilder {
     }
 
     /// add  a title in navigationBar eg. profile, home
-    public func setTextFieldPlaceholder(_ textFieldPlaceHolder: String) -> ToolBarItemDataBuilder {
-        self.textFieldPlaceHolder = textFieldPlaceHolder
-        return self
-    }
-
-    /// add  a title in navigationBar eg. profile, home
-    public func setTextFieldString(_ textFieldString: String) -> ToolBarItemDataBuilder {
-        self.textFieldString = textFieldString
-        return self
-    }
+//    public func setTextFieldPlaceholder(_ textFieldPlaceHolder: String) -> ToolBarItemDataBuilder {
+//        self.textFieldPlaceHolder = textFieldPlaceHolder
+//        return self
+//    }
+//
+//    /// add  a title in navigationBar eg. profile, home
+//    public func setTextFieldString(_ textFieldString: String) -> ToolBarItemDataBuilder {
+//        self.textFieldString = textFieldString
+//        return self
+//    }
 
     public func setTextField(_ textField: TextField<Text>?) -> ToolBarItemDataBuilder {
         self.textField = textField
