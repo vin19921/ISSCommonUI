@@ -45,7 +45,7 @@ public struct CustomTextField: UIViewRepresentable {
     }
 
     public func updateUIView(_ uiView: UITextField, context _: Context) {
-        guard isFirstResponder, !uiView.isFirstResponder else {
+        guard isFirstResponder.wrappedValue, !uiView.isFirstResponder else {
             return
         }
         uiView.becomeFirstResponder()
