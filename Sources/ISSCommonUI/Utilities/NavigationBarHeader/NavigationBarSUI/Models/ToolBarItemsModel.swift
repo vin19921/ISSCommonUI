@@ -88,7 +88,7 @@ public class ToolBarItemDataBuilder {
 
 //        let textField: TextField<Label>??
         let textFieldPlaceHolder: String?
-        @Binding var textFieldString: String
+        let textFieldString: Binding<String>?
     }
     
     // MARK: - Private properties
@@ -105,7 +105,7 @@ public class ToolBarItemDataBuilder {
     // MARK: - TextField
 //    private(set) var textField: TextField<Label>? = nil
     private(set) var textFieldPlaceHolder: String = ""
-    private(set) @Binding var textFieldString: String
+    private(set) var textFieldString: Binding<String>?
     
     public init() {}
     
