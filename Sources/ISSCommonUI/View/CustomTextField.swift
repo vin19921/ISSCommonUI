@@ -8,8 +8,8 @@
 import SwiftUI
 
 public struct CustomTextField: UIViewRepresentable {
-    @Binding var text: String
-    @Binding var isFirstResponder: Bool
+    var text: Binding<String>
+    var isFirstResponder: Binding<Bool>
 
     var font: UIFont?
     var keyboardType: UIKeyboardType = .default
