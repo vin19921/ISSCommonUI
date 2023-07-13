@@ -104,8 +104,8 @@ public class ToolBarItemDataBuilder {
 
     // MARK: - TextField
 //    private(set) var textField: TextField<Label>? = nil
-//    private(set) var textFieldPlaceHolder: String = ""
-//    private(set) var textFieldString: Binding<String>?
+    private(set) var textFieldPlaceHolder: String = ""
+    private(set) var textFieldString: Binding<String>?
     
     public init() {}
     
@@ -172,10 +172,10 @@ public class ToolBarItemDataBuilder {
                         titleFont: titleFont,
                         callback: callback,
                         accessibilityIdentifier: accessibilityIdentifier
-//                        ,
+                        ,
 //                        textField: textField,
-//                        textFieldPlaceHolder: textFieldPlaceHolder,
-//                        textFieldString: textFieldString
+                        textFieldPlaceHolder: textFieldPlaceHolder,
+                        textFieldString: textFieldString
         )
     }
 }
