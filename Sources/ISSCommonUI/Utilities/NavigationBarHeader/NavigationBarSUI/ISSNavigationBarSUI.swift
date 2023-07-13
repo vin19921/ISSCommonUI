@@ -303,7 +303,7 @@ private struct ToolBarButtonWithImage: View {
 //    }
 //}
 
-public struct ToolBarWithTextField: View {
+private struct ToolBarWithTextField: View {
     var placeHolder: String?
     @Binding var inputText: String?
 
