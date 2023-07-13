@@ -209,11 +209,13 @@ private struct ToolBarItemView: View {
                                 foregroundColor: foregroundColor,
                                 roundedbuttonSize: roundedbuttonSize)
                 .fixedSize(horizontal: true, vertical: true)
-            } else if (toolBarItem?.textField == nil) {
-                ToolBarWithTextField(roundedbuttonSize: roundedbuttonSize,
-                                     text: toolBarItem?.textFieldString)
-//                .fixedSize(horizontal: false, vertical: true)
-            } else {
+            }
+//            else if (toolBarItem?.textField == nil) {
+//                ToolBarWithTextField(roundedbuttonSize: roundedbuttonSize,
+//                                     text: toolBarItem?.textFieldString)
+////                .fixedSize(horizontal: false, vertical: true)
+//            }
+            else {
                 ToolBarButtonWithImage(toolBarItem: toolBarItem,
                                        tintColor: tintColor,
                                        foregroundColor: foregroundColor,
@@ -279,22 +281,22 @@ private struct ToolBarButtonWithImage: View {
     }
 }
 
-private struct ToolBarWithTextField: View {
-    var toolBarItem: ToolBarItemDataBuilder.ToolBarItemData?
-    var tintColor: Color?
-    var foregroundColor: Color?
-    var roundedbuttonSize: CGFloat
-    @Binding var text: String
-    
-    fileprivate var body: some View {
-        TextField(toolBarItem?.textFieldPlaceholder ?? "", text: $text)
-            .font(toolBarItem?.titleFont ?? Theme.current.subtitle2.font)
-            .foregroundColor(toolBarItem?.tintColor ?? tintColor)
-            .lineLimit(1)
-            .frame(height: roundedbuttonSize)
-            .accessibilityValue(toolBarItem?.titleString ?? "")
-    }
-}
+//private struct ToolBarWithTextField: View {
+//    var toolBarItem: ToolBarItemDataBuilder.ToolBarItemData?
+//    var tintColor: Color?
+//    var foregroundColor: Color?
+//    var roundedbuttonSize: CGFloat
+//    @Binding var text: String
+//
+//    fileprivate var body: some View {
+//        TextField(toolBarItem?.textFieldPlaceholder ?? "", text: $text)
+//            .font(toolBarItem?.titleFont ?? Theme.current.subtitle2.font)
+//            .foregroundColor(toolBarItem?.tintColor ?? tintColor)
+//            .lineLimit(1)
+//            .frame(height: roundedbuttonSize)
+//            .accessibilityValue(toolBarItem?.titleString ?? "")
+//    }
+//}
 
 private struct ToolBarRightAlignedItems: View {
     var toolBarItems: ToolBarItemsDataBuilder.ToolBarItemsData?
