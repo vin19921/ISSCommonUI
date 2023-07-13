@@ -45,12 +45,12 @@ public struct CustomTextField: UIViewRepresentable {
 
 // MARK: - Coordinator
 
-extension CustomTextField {
-    class Coordinator: NSObject, UITextFieldDelegate {
+public extension CustomTextField {
+    public class Coordinator: NSObject, UITextFieldDelegate {
         let parent: CustomTextField
         var textFieldDidChange: () -> Void
 
-        init(parent: CustomTextField,
+        public init(parent: CustomTextField,
              textFieldDidChange: @escaping () -> Void)
         {
             self.parent = parent
@@ -58,21 +58,21 @@ extension CustomTextField {
         }
 
         // Became first responder
-        func textFieldDidBeginEditing(_: UITextField) {
+        public func textFieldDidBeginEditing(_: UITextField) {
             parent.isFirstResponder = true
         }
 
-        func textFieldDidChangeSelection(_ textField: UITextField) {
+        public func textFieldDidChangeSelection(_ textField: UITextField) {
             parent.text = textField.text ?? ""
             textFieldDidChange()
         }
 
         // Resign first responder
-        func textFieldDidEndEditing(_: UITextField) {
+        public func textFieldDidEndEditing(_: UITextField) {
             parent.isFirstResponder = false
         }
 
-        func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
+        public func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
             guard let maxLength = parent.maxLength else {
                 return true
             }
