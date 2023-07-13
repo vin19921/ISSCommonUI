@@ -87,8 +87,8 @@ public class ToolBarItemDataBuilder {
         let accessibilityIdentifier: String
 
 //        let textField: TextField<Label>??
-//        let textFieldPlaceholder: String
-//        let textFieldString: Binding<String>?
+        let textFieldPlaceholder: String?
+        let textFieldString: Binding<String>?
     }
     
     // MARK: - Private properties
@@ -152,11 +152,11 @@ public class ToolBarItemDataBuilder {
         return self
     }
 
-//    /// add  a title in navigationBar eg. profile, home
-//    public func setTextFieldPlaceholder(_ textFieldPlaceHolder: String) -> ToolBarItemDataBuilder {
-//        self.textFieldPlaceHolder = textFieldPlaceHolder
-//        return self
-//    }
+    /// add  a title in navigationBar eg. profile, home
+    public func setTextFieldPlaceholder(_ textFieldPlaceHolder: String) -> ToolBarItemDataBuilder {
+        self.textFieldPlaceHolder = textFieldPlaceHolder
+        return self
+    }
 //
 //    /// add  a title in navigationBar eg. profile, home
 //    public func setTextFieldString(_ textFieldString: Binding<String>) -> ToolBarItemDataBuilder {
