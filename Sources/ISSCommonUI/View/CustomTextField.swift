@@ -12,7 +12,7 @@ public struct CustomTextField: UIViewRepresentable {
 //    public var text: Binding<String>
 //    public var isFirstResponder: Binding<Bool>
 
-    @Binding var isFirstResponder: Bool
+    @Binding public var isFirstResponder: Bool
 
     public var font: UIFont?
     public var keyboardType: UIKeyboardType = .default
