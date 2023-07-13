@@ -216,12 +216,12 @@ private struct ToolBarItemView: View {
 //                ToolBarWithTextField(toolBarItem: toolBarItem)
 //                .fixedSize(horizontal: false, vertical: true)
 //            }
-            else if let textFieldPlaceHolder = toolBarItem?.textFieldPlaceHolder, !textFieldPlaceHolder.isEmpty {
-                // textFieldPlaceHolder is not empty
-                // Perform actions accordingly
-                ToolBarWithTextField(toolBarItem: toolBarItem)
-                .fixedSize(horizontal: false, vertical: true)
-            }
+//            else if let textFieldPlaceHolder = toolBarItem?.textFieldPlaceHolder, !textFieldPlaceHolder.isEmpty {
+//                // textFieldPlaceHolder is not empty
+//                // Perform actions accordingly
+//                ToolBarWithTextField(toolBarItem: toolBarItem)
+//                .fixedSize(horizontal: false, vertical: true)
+//            }
 //            else {
 //                // textFieldPlaceHolder is empty or nil
 //                // Perform actions accordingly
