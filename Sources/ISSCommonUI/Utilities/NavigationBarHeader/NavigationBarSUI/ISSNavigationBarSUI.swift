@@ -258,14 +258,15 @@ private struct ToolBarWithText: View {
         HStack {
 //            TextField(toolBarItem?.textFieldPlaceHolder ?? "Enter Text",
 //                      text: toolBarItem?.$textFieldString)
-            TextField(toolBarItem?.textFieldPlaceHolder ?? "Enter Text", text: Binding(
-                get: {
-                    toolBarItem?.textFieldString ?? ""
-                },
-                set: { newValue in
-                    toolBarItem?.textFieldString = newValue
-                }
-            ))
+//            TextField(toolBarItem?.textFieldPlaceHolder ?? "Enter Text", text: Binding(
+//                get: {
+//                    toolBarItem?.textFieldString ?? ""
+//                },
+//                set: { newValue in
+//                    toolBarItem?.textFieldString = newValue
+//                }
+//            ))
+            toolBarItem?.textField
             .font(toolBarItem?.titleFont ?? Theme.current.subtitle2.font)
             .frame(width: 150, height: roundedbuttonSize)
             .textFieldStyle(RoundedBorderTextFieldStyle())
