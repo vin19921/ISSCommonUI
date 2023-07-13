@@ -257,7 +257,7 @@ private struct ToolBarWithText: View {
 //            .accessibilityValue(toolBarItem?.titleString ?? "")
         HStack {
             TextField(toolBarItem?.textFieldPlaceHolder ?? "Enter Text",
-                      text: toolBarItem?.textFieldString ?? Binding<String>.constant(""))
+                      text: $toolBarItem?.textFieldString)
             .font(toolBarItem?.titleFont ?? Theme.current.subtitle2.font)
             .frame(width: 150, height: roundedbuttonSize)
             .textFieldStyle(RoundedBorderTextFieldStyle())
