@@ -8,15 +8,18 @@
 import SwiftUI
 
 public struct CustomTextField: UIViewRepresentable {
-    @Binding var text: String
-    @Binding var isFirstResponder: Bool
+//    @Binding public var text: String
+    public var text: Binding<String>
+    public var isFirstResponder: Binding<Bool>
 
-    var font: UIFont?
-    var keyboardType: UIKeyboardType = .default
-    var maxLength: Int?
-    var toolbarButtonTitle: String
-    var toolbarAction: ((ToolbarAction) -> Void)?
-    var textFieldDidChange: () -> Void
+//    @Binding var isFirstResponder: Bool
+
+    public var font: UIFont?
+    public var keyboardType: UIKeyboardType = .default
+    public var maxLength: Int?
+    public var toolbarButtonTitle: String
+    public var toolbarAction: ((ToolbarAction) -> Void)?
+    public var textFieldDidChange: () -> Void
 
     public func makeUIView(context: Context) -> UITextField {
         let textField = UITextField()
@@ -46,7 +49,7 @@ public struct CustomTextField: UIViewRepresentable {
 // MARK: - Coordinator
 
 public extension CustomTextField {
-    public class Coordinator: NSObject, UITextFieldDelegate {
+    class Coordinator: NSObject, UITextFieldDelegate {
         let parent: CustomTextField
         var textFieldDidChange: () -> Void
 
