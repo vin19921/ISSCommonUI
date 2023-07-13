@@ -86,9 +86,10 @@ public class ToolBarItemDataBuilder {
         let callback: (() -> Void)?
         let accessibilityIdentifier: String
 
-        let textField: ToolBarWithTextField<Text>?
+//        let textField: ToolBarWithTextField<Text>?
         let textFieldPlaceHolder: String?
         let textFieldString: Binding<String>?
+//        let isTextField: Bool?
 //        let tf: ToolBarWithTextField?
 //        let toolbarTf: ToolBarWithTextField<Text>?
     }
@@ -108,7 +109,8 @@ public class ToolBarItemDataBuilder {
 //    private(set) var textField: TextField<Label>? = nil
     private(set) var textFieldPlaceHolder: String = ""
     private(set) var textFieldString: Binding<String>? = nil
-    private(set) var textField: ToolBarWithTextField<Text>? = nil
+//    private(set) var textField: ToolBarWithTextField<Text>? = nil
+//    private(set) var isTextField: Bool? = false
     
     public init() {}
     
@@ -167,10 +169,15 @@ public class ToolBarItemDataBuilder {
         return self
     }
 
-    public func setTextField(_ textField: ToolBarWithTextField<Text>?) -> ToolBarItemDataBuilder {
-        self.textField = textField
-        return self
-    }
+//    public func setTextField(_ textField: ToolBarWithTextField<Text>?) -> ToolBarItemDataBuilder {
+//        self.textField = textField
+//        return self
+//    }
+    /// add  a title in navigationBar eg. profile, home
+//    public func setIsTextField(_ isTextField: Bool) -> ToolBarItemDataBuilder {
+//        self.isTextField = isTextField
+//        return self
+//    }
     
     public func build() -> ToolBarItemData {
         ToolBarItemData(image: image,
@@ -181,7 +188,8 @@ public class ToolBarItemDataBuilder {
                         callback: callback,
                         accessibilityIdentifier: accessibilityIdentifier
                         ,
-                        textField: textField,
+//                        isTextField: isTextField
+//                        textField: textField,
                         textFieldPlaceHolder: textFieldPlaceHolder,
                         textFieldString: textFieldString
         )

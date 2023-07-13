@@ -144,7 +144,9 @@ public struct ISSNavigationBarSUI: View {
                                             foregroundColor: foregroundColor,
                                             height: height,
                                             imageBackgroundColor: imageBackgroundColor,
-                                            roundedbuttonSize: roundedbuttonSize)
+                                            roundedbuttonSize: roundedbuttonSize,
+                                            placeHolderText: <#T##String?#>
+                            )
                         }
                     } .frame(maxWidth: .infinity, alignment: .leading)
                 }
@@ -190,6 +192,8 @@ private struct ToolBarItemView: View {
     var imageBackgroundColor: Color?
     var roundedbuttonSize: CGFloat
     var imageAlignment: Alignment?
+//    var placeHolderText: String?
+//    @Binding var bindingInputText: String?
     
     private var statusBarHeight: CGFloat {
         let window = UIApplication.shared.connectedScenes
@@ -210,8 +214,9 @@ private struct ToolBarItemView: View {
                                 roundedbuttonSize: roundedbuttonSize)
                 .fixedSize(horizontal: true, vertical: true)
             }
-            else if (toolBarItem?.textField != nil) {
-                toolBarItem?.textField
+            else if (toolBarItem?.textFieldPlaceHolder != nil) {
+                ToolBarWithTextField(placeHolder: toolBarItem?.textFieldPlaceHolder ?? "",
+                                     inputText: toolBarItem?.textFieldString ?? Binding<String>.constant(""))
 //                .fixedSize(horizontal: false, vertical: true)
             }
             else {
@@ -298,9 +303,16 @@ private struct ToolBarButtonWithImage: View {
 //    }
 //}
 
-public struct ToolBarWithTextField<Label: View> {
-    var textfield: TextField<Label>?
-    var accessibilityId: String?
+public struct ToolBarWithTextField: View {
+    var placeHolder: String?
+    @Binding var inputText: String?
+
+    fileprivate var body: some View {
+        TextField(placeHolder ? "Enter Text", text: $inputText)
+            .font(toolBarItem?.titleFont ?? Theme.current.subtitle2.font)
+            .lineLimit(1)
+            .foregroundColor(toolBarItem?.tintColor ?? tintColor)
+    }
 }
 
 private struct ToolBarRightAlignedItems: View {
