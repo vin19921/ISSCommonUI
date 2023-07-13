@@ -327,7 +327,7 @@ private struct ToolBarWithTextField: View {
                   text: toolBarItem?.textFieldString ?? Binding<String>.constant(""))
             .font(toolBarItem?.titleFont ?? Theme.current.subtitle2.font)
             .lineLimit(1)
-            .frame(height: roundedbuttonSize)
+            .frame(height: 36)
             .foregroundColor(Color.white)
             .background(Color.black)
     }
