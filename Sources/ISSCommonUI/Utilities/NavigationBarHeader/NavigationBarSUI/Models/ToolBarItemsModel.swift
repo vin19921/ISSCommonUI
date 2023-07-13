@@ -105,7 +105,7 @@ public class ToolBarItemDataBuilder {
     // MARK: - TextField
 //    private(set) var textField: TextField<Label>? = nil
     private(set) var textFieldPlaceHolder: String = ""
-    private(set) var textFieldString: Binding<String>?
+    private(set) var textFieldString: Binding<String>? = nil
     
     public init() {}
     
