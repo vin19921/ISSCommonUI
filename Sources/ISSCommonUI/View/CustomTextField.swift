@@ -63,7 +63,7 @@ public struct CustomTextField: UIViewRepresentable {
 
 public extension CustomTextField {
     class Coordinator: NSObject, UITextFieldDelegate {
-        let parent: CustomTextField
+        var parent: CustomTextField
         var textFieldDidChange: () -> Void
 
         public init(parent: CustomTextField,
@@ -75,17 +75,17 @@ public extension CustomTextField {
 
         // Became first responder
         public func textFieldDidBeginEditing(_: UITextField) {
-            parent.isFirstResponder = true
+            parent.isFirstResponder.wrappedValue = true
         }
 
         public func textFieldDidChangeSelection(_ textField: UITextField) {
-            parent.text = textField.text ?? ""
+            parent.text.wrappedValue = textField.text ?? ""
             textFieldDidChange()
         }
 
         // Resign first responder
         public func textFieldDidEndEditing(_: UITextField) {
-            parent.isFirstResponder = false
+            parent.isFirstResponder.wrappedValue = false
         }
 
         public func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
