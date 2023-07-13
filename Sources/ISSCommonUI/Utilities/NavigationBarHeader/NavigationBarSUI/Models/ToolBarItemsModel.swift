@@ -89,7 +89,7 @@ public class ToolBarItemDataBuilder {
 //        let textField: ToolBarWithTextField<Text>?
         let textFieldPlaceHolder: String?
 //        let textFieldString: Binding<String>?
-        @Binding var textFieldString: String
+        @Binding var textFieldString: String = ""
 //        let isTextField: Bool?
 //        let tf: ToolBarWithTextField?
 //        let toolbarTf: ToolBarWithTextField<Text>?
