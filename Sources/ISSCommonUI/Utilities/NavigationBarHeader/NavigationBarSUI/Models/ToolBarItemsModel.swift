@@ -193,7 +193,7 @@ public class ToolBarItemDataBuilder {
 //                        isTextField: isTextField
 //                        textField: textField,
                         textFieldPlaceHolder: textFieldPlaceHolder,
-                        textFieldString: textFieldString
+                        textFieldString: $textFieldString
         )
     }
 }
