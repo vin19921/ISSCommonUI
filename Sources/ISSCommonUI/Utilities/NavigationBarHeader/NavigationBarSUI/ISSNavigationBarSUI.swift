@@ -212,10 +212,21 @@ private struct ToolBarItemView: View {
                                 roundedbuttonSize: roundedbuttonSize)
                 .fixedSize(horizontal: true, vertical: true)
             }
-            else if (toolBarItem?.textFieldPlaceHolder != nil && !toolBarItem?.textFieldPlaceHolder?.isEmpty) {
+//            else if (toolBarItem?.textFieldPlaceHolder != nil && !toolBarItem?.textFieldPlaceHolder?.isEmpty) {
+//                ToolBarWithTextField(toolBarItem: toolBarItem)
+//                .fixedSize(horizontal: false, vertical: true)
+//            }
+            else if let textFieldPlaceHolder = toolBarItem?.textFieldPlaceHolder, !textFieldPlaceHolder.isEmpty {
+                // textFieldPlaceHolder is not empty
+                // Perform actions accordingly
                 ToolBarWithTextField(toolBarItem: toolBarItem)
                 .fixedSize(horizontal: false, vertical: true)
             }
+//            else {
+//                // textFieldPlaceHolder is empty or nil
+//                // Perform actions accordingly
+//            }
+
             else {
                 ToolBarButtonWithImage(toolBarItem: toolBarItem,
                                        tintColor: tintColor,
