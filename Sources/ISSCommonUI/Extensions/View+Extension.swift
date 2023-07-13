@@ -123,7 +123,7 @@ public extension View {
         }
     }
 
-    func addToolBarTextField(placement: ToolbarItemPlacement = .navigationBarTrailing,
+    func addToolBarTextField(placement: ToolbarItemPlacement = .navigationBarLeading,
                              accessibilityIdentifier: String? = nil,
                              text: Binding<String>?) -> some View {
         toolbar {
