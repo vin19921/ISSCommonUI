@@ -8,18 +8,31 @@
 import SwiftUI
 
 public struct CustomTextField: UIViewRepresentable {
-    @Binding public var text: String
-//    public var text: Binding<String>
-//    public var isFirstResponder: Binding<Bool>
+    @Binding var text: String
+    @Binding var isFirstResponder: Bool
 
-    @Binding public var isFirstResponder: Bool
+    var font: UIFont?
+    var keyboardType: UIKeyboardType = .default
+    var maxLength: Int?
+    var toolbarButtonTitle: String
+    var toolbarAction: ((ToolbarAction) -> Void)?
+    var textFieldDidChange: () -> Void
 
-    public var font: UIFont?
-    public var keyboardType: UIKeyboardType = .default
-    public var maxLength: Int?
-    public var toolbarButtonTitle: String
-    public var toolbarAction: ((ToolbarAction) -> Void)?
-    public var textFieldDidChange: () -> Void
+    public init(text: Binding<String>,
+                isFirstResponder: Binding<Bool>,
+                font: UIFont? = nil,
+                keyboardType: UIKeyboardType = .default,
+                toolbarButtonTitle: String = "",
+                textFieldDidChange: @escaping () -> Void
+    ) {
+        // Initialize the properties
+        self.text = text
+        self.isFirstResponder = isFirstResponder
+        self.font = font
+        self.keyboardType = keyboardType
+        self.toolbarButtonTitle = toolbarButtonTitle
+        self.textFieldDidChange = textFieldDidChange
+    }
 
     public func makeUIView(context: Context) -> UITextField {
         let textField = UITextField()
