@@ -213,9 +213,8 @@ private struct ToolBarItemView: View {
                 .fixedSize(horizontal: true, vertical: true)
             }
             else if (toolBarItem?.textFieldPlaceHolder != nil) {
-                ToolBarWithTextField(placeHolder: toolBarItem?.textFieldPlaceHolder ?? "",
-                                     inputText: toolBarItem?.textFieldString ?? Binding<String>.constant(""))
-//                .fixedSize(horizontal: false, vertical: true)
+                ToolBarWithTextField(toolBarItem: toolBarItem)
+                .fixedSize(horizontal: false, vertical: true)
             }
             else {
                 ToolBarButtonWithImage(toolBarItem: toolBarItem,
@@ -302,14 +301,16 @@ private struct ToolBarButtonWithImage: View {
 //}
 
 private struct ToolBarWithTextField: View {
-    var placeHolder: String?
-    @Binding var inputText: String?
+    var toolBarItem: ToolBarItemDataBuilder.ToolBarItemData?
+//    var placeHolder: String?
+//    @Binding var inputText: String?
 
     fileprivate var body: some View {
-        TextField(placeHolder ? "Enter Text", text: $inputText)
+        TextField(toolBarItem?.textFieldPlaceHolder ?? "Enter Text",
+                  text: toolBarItem?.textFieldString)
             .font(toolBarItem?.titleFont ?? Theme.current.subtitle2.font)
             .lineLimit(1)
-            .foregroundColor(toolBarItem?.tintColor ?? tintColor)
+            .foregroundColor(toolBarItem?.tintColor ?? Color.black)
     }
 }
 
