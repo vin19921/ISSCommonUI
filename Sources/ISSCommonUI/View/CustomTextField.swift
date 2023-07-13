@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct CustomTextField: UIViewRepresentable {
+public struct CustomTextField: UIViewRepresentable {
     @Binding var text: String
     @Binding var isFirstResponder: Bool
 
@@ -18,7 +18,7 @@ struct CustomTextField: UIViewRepresentable {
     var toolbarAction: ((ToolbarAction) -> Void)?
     var textFieldDidChange: () -> Void
 
-    func makeUIView(context: Context) -> UITextField {
+    public func makeUIView(context: Context) -> UITextField {
         let textField = UITextField()
         textField.setContentCompressionResistancePriority(.defaultLow, for: .horizontal)
         textField.font = font
@@ -28,14 +28,14 @@ struct CustomTextField: UIViewRepresentable {
         return textField
     }
 
-    func updateUIView(_ uiView: UITextField, context _: Context) {
+    public func updateUIView(_ uiView: UITextField, context _: Context) {
         guard isFirstResponder, !uiView.isFirstResponder else {
             return
         }
         uiView.becomeFirstResponder()
     }
 
-    func makeCoordinator() -> Coordinator {
+    public func makeCoordinator() -> Coordinator {
         Coordinator(parent: self,
                     textFieldDidChange: {
                         self.textFieldDidChange()
