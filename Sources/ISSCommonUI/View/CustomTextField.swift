@@ -16,7 +16,7 @@ public struct CustomTextField: UIViewRepresentable {
     var maxLength: Int?
     var toolbarButtonTitle: String
     var toolbarAction: ((ToolbarAction) -> Void)?
-    var textFieldDidChange: () -> Void
+    var textFieldDidChange: () -> Void = {}
 
     public init(text: Binding<String>,
                 isFirstResponder: Binding<Bool>,
