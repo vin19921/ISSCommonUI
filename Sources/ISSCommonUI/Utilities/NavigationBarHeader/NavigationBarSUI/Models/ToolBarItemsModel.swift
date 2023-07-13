@@ -87,7 +87,7 @@ public class ToolBarItemDataBuilder {
         let accessibilityIdentifier: String
 
 //        let textField: TextField<Label>??
-        let textFieldPlaceholder: String?
+        let textFieldPlaceHolder: String?
         let textFieldString: Binding<String>?
     }
     
