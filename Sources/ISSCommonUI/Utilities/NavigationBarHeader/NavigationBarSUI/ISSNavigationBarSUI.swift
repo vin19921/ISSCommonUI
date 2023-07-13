@@ -144,9 +144,7 @@ public struct ISSNavigationBarSUI: View {
                                             foregroundColor: foregroundColor,
                                             height: height,
                                             imageBackgroundColor: imageBackgroundColor,
-                                            roundedbuttonSize: roundedbuttonSize,
-                                            placeHolderText: <#T##String?#>
-                            )
+                                            roundedbuttonSize: roundedbuttonSize)
                         }
                     } .frame(maxWidth: .infinity, alignment: .leading)
                 }
