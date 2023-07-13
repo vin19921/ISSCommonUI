@@ -212,7 +212,7 @@ private struct ToolBarItemView: View {
             }
             else if (toolBarItem?.textField != nil) {
                 toolBarItem?.textField
-                .fixedSize(horizontal: false, vertical: true)
+//                .fixedSize(horizontal: false, vertical: true)
             }
             else {
                 ToolBarButtonWithImage(toolBarItem: toolBarItem,
@@ -280,22 +280,27 @@ private struct ToolBarButtonWithImage: View {
     }
 }
 
-private struct ToolBarWithTextField: View {
-    var toolBarItem: ToolBarItemDataBuilder.ToolBarItemData?
-    var tintColor: Color?
-    var foregroundColor: Color?
-    var roundedbuttonSize: CGFloat
-    var textFieldPlaceholder: String?
-    @Binding var text: String
+//private struct ToolBarWithTextField: View {
+//    var toolBarItem: ToolBarItemDataBuilder.ToolBarItemData?
+//    var tintColor: Color?
+//    var foregroundColor: Color?
+//    var roundedbuttonSize: CGFloat
+//    var textFieldPlaceholder: String?
+//    @Binding var text: String
+//
+//    fileprivate var body: some View {
+//        TextField(toolBarItem?.textFieldPlaceHolder ?? "", text: $text)
+//            .font(toolBarItem?.titleFont ?? Theme.current.subtitle2.font)
+//            .foregroundColor(toolBarItem?.tintColor ?? tintColor)
+//            .lineLimit(1)
+//            .frame(height: roundedbuttonSize)
+////            .accessibilityValue(toolBarItem?.titleString ?? "")
+//    }
+//}
 
-    fileprivate var body: some View {
-        TextField(toolBarItem?.textFieldPlaceHolder ?? "", text: $text)
-            .font(toolBarItem?.titleFont ?? Theme.current.subtitle2.font)
-            .foregroundColor(toolBarItem?.tintColor ?? tintColor)
-            .lineLimit(1)
-            .frame(height: roundedbuttonSize)
-//            .accessibilityValue(toolBarItem?.titleString ?? "")
-    }
+public struct ToolBarWithTextField<Label: View> {
+    var textfield: TextField<Label>?
+    var accessibilityId: String?
 }
 
 private struct ToolBarRightAlignedItems: View {

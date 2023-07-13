@@ -86,9 +86,11 @@ public class ToolBarItemDataBuilder {
         let callback: (() -> Void)?
         let accessibilityIdentifier: String
 
-        let textField: TextField<Text>?
+        let textField: ToolBarWithTextField<Text>?
         let textFieldPlaceHolder: String?
         let textFieldString: Binding<String>?
+//        let tf: ToolBarWithTextField?
+//        let toolbarTf: ToolBarWithTextField<Text>?
     }
     
     // MARK: - Private properties
@@ -106,7 +108,7 @@ public class ToolBarItemDataBuilder {
 //    private(set) var textField: TextField<Label>? = nil
     private(set) var textFieldPlaceHolder: String = ""
     private(set) var textFieldString: Binding<String>? = nil
-    private(set) var textField: TextField<Text>? = nil
+    private(set) var textField: ToolBarWithTextField<Text>? = nil
     
     public init() {}
     
@@ -165,7 +167,7 @@ public class ToolBarItemDataBuilder {
         return self
     }
 
-    public func setTextField(_ textField: TextField<Text>?) -> ToolBarItemDataBuilder {
+    public func setTextField(_ textField: ToolBarWithTextField<Text>?) -> ToolBarItemDataBuilder {
         self.textField = textField
         return self
     }
