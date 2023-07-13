@@ -8,11 +8,11 @@
 import SwiftUI
 
 public struct CustomTextField: UIViewRepresentable {
-//    @Binding public var text: String
-    public var text: Binding<String>
-    public var isFirstResponder: Binding<Bool>
+    @Binding public var text: String
+//    public var text: Binding<String>
+//    public var isFirstResponder: Binding<Bool>
 
-//    @Binding var isFirstResponder: Bool
+    @Binding var isFirstResponder: Bool
 
     public var font: UIFont?
     public var keyboardType: UIKeyboardType = .default
@@ -121,7 +121,7 @@ private extension CustomTextField {
     }
 }
 
-enum ToolbarAction {
+public enum ToolbarAction {
     case done, up, down
 }
 
