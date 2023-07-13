@@ -213,7 +213,7 @@ private struct ToolBarItemView: View {
             else if (toolBarItem?.textFieldPlaceHolder == nil) {
                 ToolBarWithTextField(roundedbuttonSize: roundedbuttonSize,
                                      textFieldPlaceholder: toolBarItem?.textFieldPlaceHolder,
-                                     text: toolBarItem?.textFieldString ?? "")
+                                     text: toolBarItem?.textFieldString)
                 .fixedSize(horizontal: false, vertical: true)
             }
             else {
@@ -291,7 +291,7 @@ private struct ToolBarWithTextField: View {
     @Binding var text: String
 
     fileprivate var body: some View {
-        TextField(toolBarItem?.textFieldPlaceholder ?? "", text: $text)
+        TextField(toolBarItem?.textFieldPlaceHolder ?? "", text: $text)
             .font(toolBarItem?.titleFont ?? Theme.current.subtitle2.font)
             .foregroundColor(toolBarItem?.tintColor ?? tintColor)
             .lineLimit(1)

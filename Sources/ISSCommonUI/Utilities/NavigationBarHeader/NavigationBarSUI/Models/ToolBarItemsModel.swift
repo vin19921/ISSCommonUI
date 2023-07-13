@@ -88,7 +88,7 @@ public class ToolBarItemDataBuilder {
 
 //        let textField: TextField<Label>??
         let textFieldPlaceHolder: String?
-        let textFieldString: Binding<String>?
+        @Binding var textFieldString: String
     }
     
     // MARK: - Private properties
@@ -105,7 +105,7 @@ public class ToolBarItemDataBuilder {
     // MARK: - TextField
 //    private(set) var textField: TextField<Label>? = nil
     private(set) var textFieldPlaceHolder: String = ""
-    private(set) var textFieldString: Binding<String>?
+    private(set) @Binding var textFieldString: String
     
     public init() {}
     
@@ -157,12 +157,12 @@ public class ToolBarItemDataBuilder {
         self.textFieldPlaceHolder = textFieldPlaceHolder
         return self
     }
-//
-//    /// add  a title in navigationBar eg. profile, home
-//    public func setTextFieldString(_ textFieldString: Binding<String>) -> ToolBarItemDataBuilder {
-//        self.textFieldString = textFieldString
-//        return self
-//    }
+
+    /// add  a title in navigationBar eg. profile, home
+    public func setTextFieldString(_ textFieldString: Binding<String>) -> ToolBarItemDataBuilder {
+        self.textFieldString = textFieldString
+        return self
+    }
     
     public func build() -> ToolBarItemData {
         ToolBarItemData(image: image,
