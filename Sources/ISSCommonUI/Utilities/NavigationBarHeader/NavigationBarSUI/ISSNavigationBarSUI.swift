@@ -328,8 +328,8 @@ private struct ToolBarWithTextField: View {
             .font(toolBarItem?.titleFont ?? Theme.current.subtitle2.font)
             .lineLimit(1)
             .frame(height: 36)
-            .foregroundColor(Color.white)
-            .background(Color.black)
+//            .foregroundColor(Color.white)
+//            .background(Color.black)
     }
 }
 
