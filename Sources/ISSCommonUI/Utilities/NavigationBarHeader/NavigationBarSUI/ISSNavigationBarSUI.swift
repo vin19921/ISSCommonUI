@@ -258,6 +258,7 @@ private struct ToolBarWithText: View {
         TextField(toolBarItem?.textFieldPlaceHolder ?? "Enter Text",
                   text: toolBarItem?.textFieldString ?? Binding<String>.constant(""))
             .font(toolBarItem?.titleFont ?? Theme.current.subtitle2.font)
+            .frame(height: roundedbuttonSize)
             .lineLimit(1)
             .foregroundColor(toolBarItem?.tintColor ?? Color.black)
     }
