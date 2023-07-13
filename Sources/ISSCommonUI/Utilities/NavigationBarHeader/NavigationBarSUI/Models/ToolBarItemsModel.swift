@@ -180,7 +180,7 @@ public class ToolBarItemDataBuilder {
                         callback: callback,
                         accessibilityIdentifier: accessibilityIdentifier
                         ,
-//                        textField: textField,
+                        textField: textField,
                         textFieldPlaceHolder: textFieldPlaceHolder,
                         textFieldString: textFieldString
         )
