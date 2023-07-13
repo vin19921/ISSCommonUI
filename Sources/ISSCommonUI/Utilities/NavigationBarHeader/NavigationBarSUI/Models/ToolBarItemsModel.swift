@@ -86,9 +86,9 @@ public class ToolBarItemDataBuilder {
         let callback: (() -> Void)?
         let accessibilityIdentifier: String
 
-        let textField: TextField<Label>??
-        let textFieldPlaceholder: String
-        let textFieldString: Binding<String>?
+//        let textField: TextField<Label>??
+//        let textFieldPlaceholder: String
+//        let textFieldString: Binding<String>?
     }
     
     // MARK: - Private properties
@@ -103,9 +103,9 @@ public class ToolBarItemDataBuilder {
     private(set) var foregroundColor: Color?
 
     // MARK: - TextField
-    private(set) var textField: TextField<Label>? = nil
-    private(set) var textFieldPlaceHolder: String = ""
-    private(set) var textFieldString: Binding<String>?
+//    private(set) var textField: TextField<Label>? = nil
+//    private(set) var textFieldPlaceHolder: String = ""
+//    private(set) var textFieldString: Binding<String>?
     
     public init() {}
     
@@ -152,17 +152,17 @@ public class ToolBarItemDataBuilder {
         return self
     }
 
-    /// add  a title in navigationBar eg. profile, home
-    public func setTextFieldPlaceholder(_ textFieldPlaceHolder: String) -> ToolBarItemDataBuilder {
-        self.textFieldPlaceHolder = textFieldPlaceHolder
-        return self
-    }
-
-    /// add  a title in navigationBar eg. profile, home
-    public func setTextFieldString(_ textFieldString: Binding<String>) -> ToolBarItemDataBuilder {
-        self.textFieldString = textFieldString
-        return self
-    }
+//    /// add  a title in navigationBar eg. profile, home
+//    public func setTextFieldPlaceholder(_ textFieldPlaceHolder: String) -> ToolBarItemDataBuilder {
+//        self.textFieldPlaceHolder = textFieldPlaceHolder
+//        return self
+//    }
+//
+//    /// add  a title in navigationBar eg. profile, home
+//    public func setTextFieldString(_ textFieldString: Binding<String>) -> ToolBarItemDataBuilder {
+//        self.textFieldString = textFieldString
+//        return self
+//    }
     
     public func build() -> ToolBarItemData {
         ToolBarItemData(image: image,
@@ -171,9 +171,11 @@ public class ToolBarItemDataBuilder {
                         foregroundColor: foregroundColor,
                         titleFont: titleFont,
                         callback: callback,
-                        accessibilityIdentifier: accessibilityIdentifier,
-                        textField: textField,
-                        textFieldPlaceHolder: textFieldPlaceHolder,
-                        textFieldString: textFieldString)
+                        accessibilityIdentifier: accessibilityIdentifier
+//                        ,
+//                        textField: textField,
+//                        textFieldPlaceHolder: textFieldPlaceHolder,
+//                        textFieldString: textFieldString
+        )
     }
 }
