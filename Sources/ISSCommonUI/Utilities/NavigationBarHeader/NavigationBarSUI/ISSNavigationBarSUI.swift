@@ -307,7 +307,7 @@ private struct ToolBarWithTextField: View {
 
     fileprivate var body: some View {
         TextField(toolBarItem?.textFieldPlaceHolder ?? "Enter Text",
-                  text: toolBarItem?.textFieldString)
+                  text: toolBarItem?.textFieldString ?? Binding<String>.constant(""))
             .font(toolBarItem?.titleFont ?? Theme.current.subtitle2.font)
             .lineLimit(1)
             .foregroundColor(toolBarItem?.tintColor ?? Color.black)
