@@ -88,8 +88,8 @@ public extension CustomTextField {
 
 // MARK: - Private
 
-private extension CustomTextField {
-    func addToolbar(_ textField: UITextField) {
+public extension CustomTextField {
+    public func addToolbar(_ textField: UITextField) {
         let numberToolbar = UIToolbar(frame: CGRect(x: 0, y: 0, width: UIScreen.main.bounds.width, height: Constant.toolbarHeight))
         numberToolbar.barStyle = .default
         numberToolbar.items = [UIBarButtonItem(image: UIImage(systemName: Constant.arrowUpImage),
@@ -113,8 +113,8 @@ private extension CustomTextField {
 
 // MARK: - Nested type
 
-private extension CustomTextField {
-    enum Constant {
+public extension CustomTextField {
+    public enum Constant {
         static let toolbarHeight: CGFloat = 50
         static let arrowUpImage = "chevron.up"
         static let arrowDownImage = "chevron.down"
