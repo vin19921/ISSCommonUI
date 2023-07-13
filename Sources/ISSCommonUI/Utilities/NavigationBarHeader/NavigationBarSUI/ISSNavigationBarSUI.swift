@@ -249,18 +249,18 @@ private struct ToolBarWithText: View {
     var roundedbuttonSize: CGFloat
     
     fileprivate var body: some View {
-//        Text(toolBarItem?.titleString ?? "")
-//            .font(toolBarItem?.titleFont ?? Theme.current.subtitle2.font)
-//            .foregroundColor(toolBarItem?.tintColor ?? tintColor)
-//            .lineLimit(1)
-//            .frame(height: roundedbuttonSize)
-//            .accessibilityValue(toolBarItem?.titleString ?? "")
-        TextField(toolBarItem?.textFieldPlaceHolder ?? "Enter Text",
-                  text: toolBarItem?.textFieldString ?? Binding<String>.constant(""))
+        Text(toolBarItem?.titleString ?? "")
             .font(toolBarItem?.titleFont ?? Theme.current.subtitle2.font)
-            .frame(height: roundedbuttonSize)
+            .foregroundColor(toolBarItem?.tintColor ?? tintColor)
             .lineLimit(1)
-            .foregroundColor(toolBarItem?.tintColor ?? Color.black)
+            .frame(height: roundedbuttonSize)
+            .accessibilityValue(toolBarItem?.titleString ?? "")
+//        TextField(toolBarItem?.textFieldPlaceHolder ?? "Enter Text",
+//                  text: toolBarItem?.textFieldString ?? Binding<String>.constant(""))
+//            .font(toolBarItem?.titleFont ?? Theme.current.subtitle2.font)
+//            .frame(height: roundedbuttonSize)
+//            .lineLimit(1)
+//            .foregroundColor(toolBarItem?.tintColor ?? Color.black)
     }
 }
 
@@ -327,7 +327,9 @@ private struct ToolBarWithTextField: View {
                   text: toolBarItem?.textFieldString ?? Binding<String>.constant(""))
             .font(toolBarItem?.titleFont ?? Theme.current.subtitle2.font)
             .lineLimit(1)
-            .foregroundColor(toolBarItem?.tintColor ?? Color.black)
+            .frame(height: roundedbuttonSize)
+            .foregroundColor(Color.white)
+            .background(Color.black)
     }
 }
 
