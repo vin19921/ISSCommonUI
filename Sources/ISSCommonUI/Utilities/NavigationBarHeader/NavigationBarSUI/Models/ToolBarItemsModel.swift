@@ -165,10 +165,9 @@ public class ToolBarItemDataBuilder {
         return self
     }
 
-    public func setTextField(_ textField: TextField<Text>?) -> Void {
-        // Implementation goes here
-        // You can perform any desired operations with the textField parameter
+    public func setTextField(_ textField: TextField<Text>?) -> ToolBarItemDataBuilder {
         self.textField = textField
+        return self
     }
     
     public func build() -> ToolBarItemData {
