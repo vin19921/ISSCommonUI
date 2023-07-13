@@ -88,7 +88,8 @@ public class ToolBarItemDataBuilder {
 
 //        let textField: ToolBarWithTextField<Text>?
         let textFieldPlaceHolder: String?
-        let textFieldString: Binding<String>?
+//        let textFieldString: Binding<String>?
+        @Binding var textFieldString: String
 //        let isTextField: Bool?
 //        let tf: ToolBarWithTextField?
 //        let toolbarTf: ToolBarWithTextField<Text>?
@@ -111,6 +112,7 @@ public class ToolBarItemDataBuilder {
     private(set) var textFieldString: Binding<String>? = nil
 //    private(set) var textField: ToolBarWithTextField<Text>? = nil
 //    private(set) var isTextField: Bool? = false
+    @Binding private(set) var textFieldString: String
     
     public init() {}
     
@@ -164,7 +166,7 @@ public class ToolBarItemDataBuilder {
     }
 
     /// add  a title in navigationBar eg. profile, home
-    public func setTextFieldString(_ textFieldString: Binding<String>) -> ToolBarItemDataBuilder {
+    public func setTextFieldString(_ textFieldString: String) -> ToolBarItemDataBuilder {
         self.textFieldString = textFieldString
         return self
     }
