@@ -44,12 +44,18 @@ public struct CustomTextField: UIViewRepresentable {
         return textField
     }
 
-    public func updateUIView(_ uiView: UITextField, context _: Context) {
-        guard isFirstResponder.wrappedValue, !uiView.isFirstResponder else {
-            return
+    public func updateUIView(_ uiView: UITextField, context: Context) {
+        if isFirstResponder.wrappedValue && !uiView.isFirstResponder {
+            DispatchQueue.main.async {
+                uiView.becomeFirstResponder()
+            }
+        } else if !isFirstResponder.wrappedValue && uiView.isFirstResponder {
+            DispatchQueue.main.async {
+                uiView.resignFirstResponder()
+            }
         }
-        uiView.becomeFirstResponder()
     }
+
 
     public func makeCoordinator() -> Coordinator {
         Coordinator(parent: self,
