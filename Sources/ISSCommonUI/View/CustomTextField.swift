@@ -46,7 +46,7 @@ public struct CustomTextField: UIViewRepresentable {
 
     public func updateUIView(_ uiView: UITextField, context: Context) {
         if isFirstResponder.wrappedValue && !uiView.isFirstResponder {
-            DispatchQueue.main.async {
+            DispatchQueue.main.asyncAfter(deadline: .now() + 0.1) {
                 uiView.becomeFirstResponder()
             }
         } else if !isFirstResponder.wrappedValue && uiView.isFirstResponder {
