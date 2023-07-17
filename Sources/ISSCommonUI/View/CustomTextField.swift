@@ -52,14 +52,20 @@ public struct CustomTextField: UIViewRepresentable {
     }
 
     public func updateUIView(_ uiView: UITextField, context: Context) {
-//        if isFirstResponder.wrappedValue && !uiView.isFirstResponder {
+        if isFirstResponder.wrappedValue && !uiView.isFirstResponder {
 //            DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
 //                uiView.becomeFirstResponder()
 //            }
-//        } else if !isFirstResponder.wrappedValue && uiView.isFirstResponder {
-//            DispatchQueue.main.async {
-//                uiView.resignFirstResponder()
-//            }
+            DispatchQueue.main.async {
+                uiView.becomeFirstResponder()
+            }
+        } else if !isFirstResponder.wrappedValue && uiView.isFirstResponder {
+            DispatchQueue.main.async {
+                uiView.resignFirstResponder()
+            }
+        }
+//        DispatchQueue.main.async {
+//            uiView.becomeFirstResponder()
 //        }
     }
 
