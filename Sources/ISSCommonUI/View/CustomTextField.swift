@@ -17,6 +17,7 @@ public struct CustomTextField: UIViewRepresentable {
     var toolbarButtonTitle: String
     var toolbarAction: ((ToolbarAction) -> Void)?
     var textFieldDidChange: () -> Void = {}
+//    var onTap: () -> Void = {} // New onTap closure
 
     public init(text: Binding<String>,
                 isFirstResponder: Binding<Bool>,
@@ -24,6 +25,8 @@ public struct CustomTextField: UIViewRepresentable {
                 keyboardType: UIKeyboardType = .default,
                 toolbarButtonTitle: String = "",
                 textFieldDidChange: @escaping () -> Void
+//                ,
+//                onTap: @escaping () -> Void
     ) {
         // Initialize the properties
         self.text = text
@@ -32,6 +35,7 @@ public struct CustomTextField: UIViewRepresentable {
         self.keyboardType = keyboardType
         self.toolbarButtonTitle = toolbarButtonTitle
         self.textFieldDidChange = textFieldDidChange
+//        self.onTap = onTap
     }
 
     public func makeUIView(context: Context) -> UITextField {
@@ -40,20 +44,23 @@ public struct CustomTextField: UIViewRepresentable {
         textField.font = font
         textField.keyboardType = keyboardType
         textField.delegate = context.coordinator
+        // Add a tap gesture recognizer
+        let tapGesture = UITapGestureRecognizer(target: context.coordinator, action: #selector(Coordinator.handleTap))
+        textField.addGestureRecognizer(tapGesture)
         addToolbar(textField)
         return textField
     }
 
     public func updateUIView(_ uiView: UITextField, context: Context) {
-        if isFirstResponder.wrappedValue && !uiView.isFirstResponder {
-            DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
-                uiView.becomeFirstResponder()
-            }
-        } else if !isFirstResponder.wrappedValue && uiView.isFirstResponder {
-            DispatchQueue.main.async {
-                uiView.resignFirstResponder()
-            }
-        }
+//        if isFirstResponder.wrappedValue && !uiView.isFirstResponder {
+//            DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
+//                uiView.becomeFirstResponder()
+//            }
+//        } else if !isFirstResponder.wrappedValue && uiView.isFirstResponder {
+//            DispatchQueue.main.async {
+//                uiView.resignFirstResponder()
+//            }
+//        }
     }
 
 
@@ -102,6 +109,12 @@ public extension CustomTextField {
             let newString = currentString.replacingCharacters(in: range, with: string)
             return newString.count <= maxLength
         }
+
+        @objc func handleTap() {
+//            parent.onTap?() // Call onTap closure
+            parent.isFirstResponder.wrappedValue = true
+            print("textfield on tap")
+         }
     }
 }
 
