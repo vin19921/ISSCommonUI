@@ -249,31 +249,31 @@ private struct ToolBarWithText: View {
     var roundedbuttonSize: CGFloat
     
     fileprivate var body: some View {
-//        Text(toolBarItem?.titleString ?? "")
-//            .font(toolBarItem?.titleFont ?? Theme.current.subtitle2.font)
-//            .foregroundColor(toolBarItem?.tintColor ?? tintColor)
-//            .lineLimit(1)
-//            .frame(height: roundedbuttonSize)
-//            .accessibilityValue(toolBarItem?.titleString ?? "")
-        HStack {
-//            TextField(toolBarItem?.textFieldPlaceHolder ?? "Enter Text",
-//                      text: toolBarItem?.$textFieldString)
-//            TextField(toolBarItem?.textFieldPlaceHolder ?? "Enter Text", text: Binding(
-//                get: {
-//                    toolBarItem?.textFieldString ?? ""
-//                },
-//                set: { newValue in
-//                    toolBarItem?.textFieldString = newValue
-//                }
-//            ))
-            toolBarItem?.textField
+        Text(toolBarItem?.titleString ?? "")
             .font(toolBarItem?.titleFont ?? Theme.current.subtitle2.font)
-            .frame(width: 150, height: roundedbuttonSize)
-            .textFieldStyle(RoundedBorderTextFieldStyle())
-            .background(Color.red)
-            .foregroundColor(Color.black)
+            .foregroundColor(toolBarItem?.tintColor ?? tintColor)
             .lineLimit(1)
-        }
+            .frame(height: roundedbuttonSize)
+            .accessibilityValue(toolBarItem?.titleString ?? "")
+//        HStack {
+////            TextField(toolBarItem?.textFieldPlaceHolder ?? "Enter Text",
+////                      text: toolBarItem?.$textFieldString)
+////            TextField(toolBarItem?.textFieldPlaceHolder ?? "Enter Text", text: Binding(
+////                get: {
+////                    toolBarItem?.textFieldString ?? ""
+////                },
+////                set: { newValue in
+////                    toolBarItem?.textFieldString = newValue
+////                }
+////            ))
+//            toolBarItem?.textField
+//            .font(toolBarItem?.titleFont ?? Theme.current.subtitle2.font)
+//            .frame(width: 150, height: roundedbuttonSize)
+//            .textFieldStyle(RoundedBorderTextFieldStyle())
+//            .background(Color.red)
+//            .foregroundColor(Color.black)
+//            .lineLimit(1)
+//        }
     }
 }
 
