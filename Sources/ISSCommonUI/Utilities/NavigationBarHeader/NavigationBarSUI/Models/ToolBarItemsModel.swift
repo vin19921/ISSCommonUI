@@ -195,9 +195,9 @@ public class ToolBarItemDataBuilder {
                         titleFont: titleFont,
                         callback: callback,
                         accessibilityIdentifier: accessibilityIdentifier
-                        ,
+//                        ,
 //                        isTextField: isTextField
-                        textField: textField
+//                        textField: textField
 //                        textFieldPlaceHolder: textFieldPlaceHolder,
 //                        textFieldString: $textFieldString
         )
