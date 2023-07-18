@@ -86,7 +86,7 @@ public class ToolBarItemDataBuilder {
         let callback: (() -> Void)?
         let accessibilityIdentifier: String
 
-        let textField: CustomTextField?
+//        let textField: CustomTextField?
 //        let textFieldPlaceHolder: String?
 //        let textFieldString: Binding<String>?
 //        @Binding var textFieldString: String?
@@ -107,7 +107,7 @@ public class ToolBarItemDataBuilder {
     private(set) var foregroundColor: Color?
 
     // MARK: - TextField
-    private(set) var textField: CustomTextField? = nil
+//    private(set) var textField: CustomTextField? = nil
 //    private(set) var textFieldPlaceHolder: String? = ""
 //    private(set) var textFieldString: Binding<String>? = nil
 //    private(set) var textField: ToolBarWithTextField<Text>? = nil
@@ -177,10 +177,10 @@ public class ToolBarItemDataBuilder {
 //        return self
 //    }
 
-    public func setTextField(_ textField: CustomTextField?) -> ToolBarItemDataBuilder {
-        self.textField = textField
-        return self
-    }
+//    public func setTextField(_ textField: CustomTextField?) -> ToolBarItemDataBuilder {
+//        self.textField = textField
+//        return self
+//    }
     /// add  a title in navigationBar eg. profile, home
 //    public func setIsTextField(_ isTextField: Bool) -> ToolBarItemDataBuilder {
 //        self.isTextField = isTextField
