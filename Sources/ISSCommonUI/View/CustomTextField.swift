@@ -9,7 +9,7 @@ import SwiftUI
 
 public struct CustomTextField: UIViewRepresentable {
     @Binding var text: String
-    var isFirstResponder: Binding<Bool>
+    @Binding var isFirstResponder: Bool
 
     var font: UIFont?
     var keyboardType: UIKeyboardType = .default
@@ -17,22 +17,7 @@ public struct CustomTextField: UIViewRepresentable {
     var toolbarButtonTitle: String
     var toolbarAction: ((ToolbarAction) -> Void)?
     var textFieldDidChange: () -> Void = {}
-
-    public init(text: Binding<String>,
-                isFirstResponder: Binding<Bool>,
-                font: UIFont? = nil,
-                keyboardType: UIKeyboardType = .default,
-                toolbarButtonTitle: String = "",
-                textFieldDidChange: @escaping () -> Void
-    ) {
-        // Initialize the properties
-        self.text = text
-        self.isFirstResponder = isFirstResponder
-        self.font = font
-        self.keyboardType = keyboardType
-        self.toolbarButtonTitle = toolbarButtonTitle
-        self.textFieldDidChange = textFieldDidChange
-    }
+    var onTapGesture: (() -> Void)?
 
     public func makeUIView(context: Context) -> UITextField {
         let textField = UITextField()
