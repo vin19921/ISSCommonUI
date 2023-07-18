@@ -8,7 +8,7 @@
 import SwiftUI
 
 public struct CustomTextField: UIViewRepresentable {
-    var text: Binding<String>
+    @Binding var text: String
     var isFirstResponder: Binding<Bool>
 
     var font: UIFont?
@@ -40,22 +40,16 @@ public struct CustomTextField: UIViewRepresentable {
         textField.font = font
         textField.keyboardType = keyboardType
         textField.delegate = context.coordinator
+        // Add a tap gesture recognizer
+        let tapGesture = UITapGestureRecognizer(target: context.coordinator, action: #selector(Coordinator.textFieldTapped))
+        textField.addGestureRecognizer(tapGesture)
         addToolbar(textField)
         return textField
     }
 
     public func updateUIView(_ uiView: UITextField, context: Context) {
-        if isFirstResponder.wrappedValue && !uiView.isFirstResponder {
-            DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
-                uiView.becomeFirstResponder()
-            }
-        } else if !isFirstResponder.wrappedValue && uiView.isFirstResponder {
-            DispatchQueue.main.async {
-                uiView.resignFirstResponder()
-            }
-        }
+        uiView.text = text
     }
-
 
     public func makeCoordinator() -> Coordinator {
         Coordinator(parent: self,
@@ -101,6 +95,11 @@ public extension CustomTextField {
             let currentString = (textField.text ?? "") as NSString
             let newString = currentString.replacingCharacters(in: range, with: string)
             return newString.count <= maxLength
+        }
+
+        @objc func textFieldTapped() {
+            parent.onTapGesture?()
+            parent.textField.becomeFirstResponder() // Set the first responder
         }
     }
 }
